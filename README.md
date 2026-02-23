@@ -26,7 +26,9 @@ Ans: getElementById / getElementByClassName:
 
 2. How do you create and insert a new element into the DOM?
 
-Ans: Firstly Create a Element:
+Ans:
+
+     Firstly Create a Element:
      cosnt para = document.createElement('P');
      
      Secondly Add content or text:
