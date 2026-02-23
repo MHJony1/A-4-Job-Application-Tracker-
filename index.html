@@ -38,6 +38,23 @@
     </div>
    </header>
 
+    <!-- main section -->
+   <main class="w-[70%] mx-auto ">
+    <!-- jobs section -->
+     <div class="flex justify-between items-center mt-7">
+      <p class="text-xl font-bold text-gray-600">Available Jobs</p>
+      <p><span id="jobsCount">0</span> jobs</p>
+    </div>
+
+    <!-- button section -->
+     <div class="flex gap-5 mt-10 mb-6">
+      <button onclick="toggleBtn('all-filter-btn')" id="all-filter-btn" class="bg-linear-to-r from-blue-500 to-purple-600 text-white font-bold py-1 px-4 rounded-md shadow-sm transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">All</button>
+      <button onclick="toggleBtn('interview-filter-btn')" id="interview-filter-btn" class="font-bold py-1 px-4 rounded-md bg-white shadow-sm transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">Interview</button>
+      <button onclick="toggleBtn('rejected-filter-btn')" id="rejected-filter-btn" class="font-bold py-1 px-4 rounded-md bg-white shadow-sm transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">Rejected</button>
+     </div>
+
+    
+   </main>
    
    
   <script src="script.js"></script>
