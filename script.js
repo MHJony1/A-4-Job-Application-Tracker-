@@ -160,3 +160,103 @@ function updateStatus(card, type) {
   }
 }
 
+//empty card show korano
+function showEmptyCard(){
+  filterSection.innerHTML = `
+        <div class=" w-full mx-auto flex flex-col items-center justify-center p-10 rounded-xl mt-10 mb-20 bg-white text-center space-y-4 ">
+           <img class=" flex items-center justify-center" src="jobs.png" alt="">
+           <div>
+            <h2 class="text-3xl opacity-60 font-semibold mb-2">No jobs available</h2>
+            <p class="text-xl text-gray-400">Check back soon for new job opportunities</p>
+           </div>
+        </div>         
+  `    
+}
+
+function renderInterview(){
+  filterSection.innerHTML = '';
+
+  if(interviewList.length === 0){
+    showEmptyCard();
+    return;
+  }
+
+  for(let interview of interviewList){
+    console.log(interview);
+    let div = document.createElement('div');
+    div.className = "job-card flex flex-col md:flex-row gap-5 justify-between p-5 rounded-xl mb-8 bg-white border border-l-5 border-transparent shadow-sm transition-all duration-300 ease-in-out hover:border-blue-600 hover:-translate-y-1 hover:shadow-md"
+    div.innerHTML = `
+        <div class="left space-y-5">
+          <!-- part-1 -->
+           <div>
+            <h2 class="title text-xl opacity-70 font-semibold">${interview.title}</h2>
+            <p class="subtitle text-gray-400">React Native Developer</p>
+           </div>
+          <!--part-2  -->
+           <div>
+            <p class="salary text-gray-400">Remote • Full-time • $130,000 - $175,000</p>  
+           </div>
+           <!--part-3  -->
+           <div>
+            <p class="status bg-green-500 text-black opacity-70 rounded-md w-fit px-2 py-1 font-semibold mb-2 mt-2">${interview.status}</p>
+            <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+           </div>
+           <!--part-4  -->
+           <div class="flex gap-3">
+            <button class="interview-btn px-2 py-1 font-semibold border-2 border-green-300 text-green-400 hover:bg-green-700 rounded-md cursor-pointer">INTERVIEW</button>
+           <button class="rejected-btn px-2 py-1 font-semibold border-2 border-red-300 text-red-400 hover:bg-red-700 rounded-md cursor-pointer">REJECTED</button>
+           </div>
+           
+        </div>
+        <div class="right">
+          <button class="delete-btn bg-gray-100 p-2 rounded-full cursor-pointer"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    `
+    filterSection.appendChild(div);
+  }
+}
+
+//rejectedList
+function renderRejected(){ 
+  filterSection.innerHTML = '';
+
+   if(rejectedList.length === 0){
+    showEmptyCard();
+    return;
+  }
+
+  for(let rejected of rejectedList){
+    console.log(rejected);
+    let div = document.createElement('div');
+    div.className = "job-card flex flex-col md:flex-row gap-5 justify-between p-5 rounded-xl mb-8 bg-white border border-l-5 border-transparent shadow-sm transition-all duration-300 ease-in-out hover:border-blue-600 hover:-translate-y-1 hover:shadow-md"
+    div.innerHTML = `
+        <div class="left space-y-5">
+          <!-- part-1 -->
+           <div>
+            <h2 class="title text-xl opacity-70 font-semibold">${rejected.title}</h2>
+            <p class="subtitle text-gray-400">React Native Developer</p>
+           </div>
+          <!--part-2  -->
+           <div>
+            <p class="salary text-gray-400">Remote • Full-time • $130,000 - $175,000</p>  
+           </div>
+           <!--part-3  -->
+           <div>
+            <p class="status bg-red-500 text-black opacity-70 rounded-md w-fit px-2 py-1 font-semibold mb-2 mt-2">${rejected.status}</p>
+            <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+           </div>
+           <!--part-4  -->
+           <div class="flex gap-3">
+            <button class="interview-btn px-2 py-1 font-semibold border-2 border-green-300 text-green-400 hover:bg-green-700 rounded-md cursor-pointer">INTERVIEW</button>
+           <button class="rejected-btn px-2 py-1 font-semibold border-2 border-red-300 text-red-400 hover:bg-red-700 rounded-md cursor-pointer">REJECTED</button>
+           </div>
+           
+        </div>
+        <div class="right">
+          <button class="delete-btn bg-gray-100 p-2 rounded-full cursor-pointer"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    `
+    filterSection.appendChild(div);
+  }
+}
+
