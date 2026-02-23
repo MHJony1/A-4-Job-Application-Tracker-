@@ -53,7 +53,43 @@
       <button onclick="toggleBtn('rejected-filter-btn')" id="rejected-filter-btn" class="font-bold py-1 px-4 rounded-md bg-white shadow-sm transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">Rejected</button>
      </div>
 
-    
+    <!-- all card section -->
+     <section id="allCard" class="space-y-5">
+     <!-- card-1 -->
+      <div class="job-card flex flex-col md:flex-row gap-5 justify-between p-5 rounded-xl mb-8 bg-white border border-l-5 border-transparent shadow-sm transition-all duration-300 ease-in-out hover:border-blue-600 hover:-translate-y-1 hover:shadow-md">
+        <!-- main part-1 -->
+        <div class="left space-y-5">
+          <!-- part-1 -->
+           <div>
+            <h2 class="title text-xl opacity-70 font-semibold">Mobile First Corp</h2>
+            <p class="subtitle text-gray-400">React Native Developer</p>
+           </div>
+          <!--part-2  -->
+           <div>
+            <p class="salary text-gray-400">Remote • Full-time • $130,000 - $175,000</p>  
+           </div>
+           <!--part-3  -->
+           <div>
+            <p class="status bg-gray-100 opacity-70 rounded-md w-fit px-2 py-1 font-semibold mb-2 mt-2">NOT APPLIED</p>
+            <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+           </div>
+           <!--part-4  -->
+           <div class="flex gap-3">
+            <button class="interview-btn px-2 py-1 font-semibold border-2 border-green-300 text-green-400 hover:bg-green-700 rounded-md cursor-pointer">INTERVIEW</button>
+           <button class="rejected-btn px-2 py-1 font-semibold border-2 border-red-300 text-red-400 hover:bg-red-700 rounded-md cursor-pointer">REJECTED</button>
+           </div>
+           
+        </div>
+        <div class="right">
+          <button class="delete-btn bg-gray-100 p-2 rounded-full cursor-pointer"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+      </div>
+
+
+
+
+      </section>
+
    </main>
    
    
