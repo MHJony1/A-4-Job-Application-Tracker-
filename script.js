@@ -80,3 +80,83 @@ const buttons = [allFilterBtn, interviewFilterBtn, rejectedFilterBtn];
   currentStatus = id; 
   calculateCounts();  
 }
+
+// event listener diye btn functoin korano
+let jobs = [];
+mainContainer.addEventListener('click', function (e) {
+ 
+  const card = e.target.closest('.job-card');
+  if (!card) return;
+
+  // DELETE BUTTON
+  if (e.target.closest('.delete-btn')) {
+
+    const title = card.querySelector('.title').innerText;
+
+    // Remove from interview & rejected arrays
+    interviewList = interviewList.filter(item => item.title !== title);
+    rejectedList = rejectedList.filter(item => item.title !== title);
+
+    // Remove from DOM
+    card.remove();
+
+    calculateCounts();
+
+    // Re-render 
+    if(currentStatus === "interview-filter-btn"){
+      renderInterview();
+    }
+    else if(currentStatus === "rejected-filter-btn"){
+      renderRejected();
+    }
+
+    return;
+  }
+
+  // Determine type
+  let type = null;
+
+  if (e.target.classList.contains('interview-btn')) {
+    type = "INTERVIEW";
+  } 
+  else if (e.target.classList.contains('rejected-btn')) {
+    type = "REJECTED";
+  }
+
+  if (!type) return;
+
+  updateStatus(card, type);
+});
+
+function updateStatus(card, type) {
+  card.querySelector('.status').innerText = type;
+
+  const title = card.querySelector('.title').innerText;
+
+  // Remove from both lists first
+  interviewList = interviewList.filter(item => item.title !== title);
+  rejectedList = rejectedList.filter(item => item.title !== title);
+
+  const cardInfo = {
+    title,
+    subtitle: card.querySelector('.subtitle').innerText,
+    salary: card.querySelector('.salary').innerText,
+    status: type,
+    notes: card.querySelector('.notes').innerText
+  };
+
+  if (type === "INTERVIEW") {
+    interviewList.push(cardInfo);
+  } else {
+    rejectedList.push(cardInfo);
+  }
+  calculateCounts();
+ //auto re-render
+  if(currentStatus === "interview-filter-btn"){
+    renderInterview();
+  }
+  else if(currentStatus === "rejected-filter-btn"){
+    renderRejected();
+  }
+}
+
