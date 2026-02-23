@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ <!-- font-style -->
+  <style>
+    *{
+      font-family: "Outfit", sans-serif;
+    };
+  </style>
+  </head>
+<body class=" bg-gray-100">
+  <!-- header section -->
+   <header class="sticky bg-gray-100 top-0 z-50 border-b border-b-gray-300 ">
+    <div class="w-[70%] mx-auto mb-6" >
+      <h2 class="text-2xl md:text-2xl lg:text-3xl text-blue-700 font-bold mb-4 pt-6 ">Job Application Tracker</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class=" bg-white rounded-lg p-5 border border-transparent shadow-sm transition-all duration-300 ease-in-out hover:border-gray-700 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="text-xl font-medium">TOTAL</h3>
+          <p id="total" class="font-semibold text-2xl text-black" >0</p>
+        </div>
+        <div class=" bg-white rounded-lg p-5 border border-transparent shadow-sm transition-all duration-300 ease-in-out hover:border-green-700 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="text-xl font-medium ">INTERVIEW</h3>
+          <p id="interviewCount" class="font-semibold text-2xl text-green-500">0</p>
+        </div>
+        <div class=" bg-white rounded-lg p-5 border border-transparent shadow-sm transition-all duration-300 ease-in-out hover:border-red-700 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="text-xl font-medium ">REJECTED</h3>
+          <p id="rejectedCount" class="font-semibold text-2xl text-red-500">0</p>
+        </div>
+      </div>
+    </div>
+   </header>
+
+   
+   
+  <script src="script.js"></script>
+</body>
+</html>
+
